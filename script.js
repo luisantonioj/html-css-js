@@ -1,3 +1,4 @@
+// Contact form validation and submission
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     const message = document.getElementById('message').value.trim();
     if (message === "") {
@@ -9,6 +10,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     }
 });
 
+// Form submission feedback
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const firstName = document.getElementById('firstName').value;
@@ -22,23 +24,24 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     }
 });
 
+// Change portfolio section background color randomly
 let currentBackground = 0;
 function changeBackground() {
     const portfolioSection = document.querySelector('.portfolio-section');
 
-    // Generate a random pastel color
     const hue = Math.floor(Math.random() * 360); // random hue
     const pastelColor = `hsl(${hue}, 70%, 85%)`; // HSL pastel tone
 
     portfolioSection.style.backgroundColor = pastelColor;
 
-    const projectTitle = event.target;
+    const projectTitle = event.target; // animation to clicked project title
     projectTitle.style.transform = 'scale(1.1)';
     setTimeout(() => {
         projectTitle.style.transform = 'scale(1.05)';
     }, 200);
 }
 
+// Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -47,6 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+// Navbar effect on scrolll
 window.addEventListener('scroll', function () {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
@@ -58,6 +62,7 @@ window.addEventListener('scroll', function () {
     }
 });
 
+// Animate project cards when they come into view
 const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) { entry.target.style.animation = 'fadeInUp 0.6s ease forwards' }
