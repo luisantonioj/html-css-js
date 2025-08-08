@@ -13,8 +13,8 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 // Form submission feedback
 document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
+    const form = e.target;
     const firstName = document.getElementById('firstName').value;
-    const lastName = document.getElementById('lastName').value;
     const email = document.getElementById('email').value;
     const message = document.getElementById('message').value.trim();
     if (message) {
@@ -22,6 +22,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     } else {
         alert(`Thank you, ${firstName}!\n\nWe will still contact you at ${email} soon.`);
     }
+    form.reset();
 });
 
 // Change portfolio section background color randomly
