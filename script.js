@@ -3,7 +3,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     const message = document.getElementById('message').value.trim();
     if (message === "") {
         const confirmProceed = confirm("You did not enter a message. Do you want to proceed without one?");
-        if (!confirmedProceed) {
+        if (!confirmProceed) {
             e.preventDefault();
             return;
         }
@@ -26,7 +26,6 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 });
 
 // Change portfolio section background color randomly
-let currentBackground = 0;
 function changeBackground() {
     const portfolioSection = document.querySelector('.portfolio-section');
 
